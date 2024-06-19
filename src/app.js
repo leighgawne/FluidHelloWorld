@@ -5,8 +5,26 @@
 
 import { SharedTree, TreeConfiguration, SchemaFactory, Tree } from "fluid-framework";
 import { TinyliciousClient } from "@fluidframework/tinylicious-client";
+import { AzureClient } from "@fluidframework/azure-client";
+import { InsecureTokenProvider } from "@fluidframework/test-client-utils";
 
-const client = new TinyliciousClient();
+const user = { id: "userId", name: "userName" };
+
+const config = {
+  tenantId: "6a210ca7-069a-4f10-9165-24eff698785c",
+  tokenProvider: new InsecureTokenProvider("D2VmOjpjxBUBnRuB0sBsjtJugRp6XgREgwK8PBBN50hbydT0M9fFJQQJ99AFACBkjD8y71xuAAAAAZFRnDU1", user),
+  endpoint: "https://us.fluidrelay.azure.com",
+  type: "remote",
+};
+
+const clientProps = {
+  connection: config,
+};
+
+const client = new AzureClient(clientProps);
+
+
+//const client = new TinyliciousClient();
 const containerSchema = {
 	initialObjects: { diceTree: SharedTree },
 };
