@@ -24,7 +24,7 @@ module.exports = (env) => {
 		plugins,
 		devServer: {
 			open: false,
-			public: 'shsddemo.azurewebsites.net',
+			allowedHosts: [ 'shsddemo.azurewebsites.net' ],
 		},
 	};
 };
