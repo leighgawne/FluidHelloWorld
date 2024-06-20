@@ -28,6 +28,7 @@ module.exports = (env) => {
 			port: 8080,
 			client: {
 				webSocketURL: {
+					hostname: "hsddemo.azurewebsites.net",
 					port: 443,
 				},
 			},
