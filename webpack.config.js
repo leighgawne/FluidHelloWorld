@@ -26,6 +26,9 @@ module.exports = (env) => {
 			open: false,
 			allowedHosts: ['hsddemo.azurewebsites.net'],
 			port: 443,
+			client: {
+				webSocketURL: 'wss://hsddemo.azurewebsites.net:443/ws',
+			},
 		},
 	};
 };
