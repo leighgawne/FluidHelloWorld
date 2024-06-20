@@ -24,12 +24,13 @@ module.exports = (env) => {
 		plugins,
 		devServer: {
 			open: false,
-			allowedHosts: ['hsddemo.azurewebsites.net'],
+			allowedHosts: ["hsddemo.azurewebsites.net"],
 			port: 8080,
 			client: {
 				webSocketURL: {
 					hostname: "hsddemo.azurewebsites.net",
 					port: 443,
+					protocol: "wss",
 				},
 			},
 		},
